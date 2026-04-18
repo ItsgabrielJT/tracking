@@ -17,14 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Inject Mapbox token from secrets
-        env:
-          MAPBOX_PUBLIC_TOKEN: ${{ secrets.MAPBOX_PUBLIC_TOKEN }}
-        run: |
-          cat > config.js <<EOF
-          window.MAPBOX_PUBLIC_TOKEN = "${MAPBOX_PUBLIC_TOKEN}";
-          EOF
-
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
