@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoPulse Ecuador | Gestión de Flotas y Rastreo Satelital</title>
+    <meta
+      name="description"
+      content="GeoPulse Ecuador: plataforma de geolocalización y tracking satelital para gestionar flotas, revender suscripciones y operar con inteligencia en tiempo real."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.2/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#inicio">
+        <span class="brand-dot"></span>
+        GeoPulse Ecuador
+      </a>
+      <nav>
+        <a href="#modulos">Módulos</a>
+        <a href="#planes">Suscripciones</a>
+        <a href="#vistas">Vistas</a>
+        <a href="#contacto">Demo</a>
+      </nav>
+      <button class="btn btn-outline">Solicitar llamada</button>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Operación 24/7 para Ecuador</p>
+          <h1>Controla, protege y escala tu negocio de rastreo satelital</h1>
+          <p class="lead">
+            Centraliza tu operación en una sola plataforma: monitorea en vivo, reduce riesgos y crea
+            planes de suscripción para crecer con más clientes.
+          </p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary">Ver demo guiada</button>
+            <button class="btn btn-ghost">Descargar brochure</button>
+          </div>
+          <ul class="hero-points">
+            <li><strong>Más control diario:</strong> seguimiento activo en ciudades y rutas clave.</li>
+            <li><strong>Menos incidentes:</strong> geocercas para zonas de riesgo y puntos críticos.</li>
+            <li><strong>Más ingresos:</strong> modelo multi-tenant para revender servicios.</li>
+          </ul>
+        </div>
+
+        <div class="hero-panel">
+          <div class="map-head">
+            <span class="live-dot"></span>
+            Centro de monitoreo en vivo
+          </div>
+          <div class="map-canvas map-3d" aria-label="Mapa 3D de flota en vivo">
+            <div id="live-map" class="live-map" aria-hidden="true"></div>
+            <img
+              class="map-base map-fallback"
+              src="https://staticmap.openstreetmap.de/staticmap.php?center=-0.1807,-78.4859&zoom=16&size=1280x720"
+              alt="Mapa urbano 3D con edificios en detalle"
+            />
+            <div class="route-line line-1"></div>
+            <div class="route-line line-2"></div>
+            <div class="route-line line-3"></div>
+
+            <div class="car-tag fleet fleet-a"><span class="car-dot"></span>TRK-204 · 62 km/h</div>
+            <div class="car-tag fleet fleet-b"><span class="car-dot"></span>TRK-118 · 48 km/h</div>
+            <div class="car-tag fleet fleet-c"><span class="car-dot"></span>TRK-051 · 55 km/h</div>
+          </div>
+          <p class="map-hint">Mapa 3D interactivo · arrastra, acerca y gira la vista</p>
+          <div class="kpi-row">
+            <article>
+              <p>Vehículos activos</p>
+              <strong id="kpi-active">128</strong>
+            </article>
+            <article>
+              <p>Alertas críticas</p>
+              <strong id="kpi-alerts">04</strong>
+            </article>
+            <article>
+              <p>Entregas hoy</p>
+              <strong id="kpi-deliveries">312</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="impact section">
+        <div class="impact-card">
+          <h3>ROI operativo visible en semanas</h3>
+          <p>
+            Menos desvíos, menos gasto en combustible y decisiones más rápidas con tableros claros.
+          </p>
+        </div>
+        <div class="impact-card">
+          <h3>Seguridad e intervención inmediata</h3>
+          <p>
+            Activa bloqueo remoto y responde en minutos ante sabotaje o eventos críticos.
+          </p>
+        </div>
+        <div class="impact-card">
+          <h3>Cumplimiento y confianza</h3>
+          <p>
+            Opera con trazabilidad, auditoría y buenas prácticas alineadas a la LOPDP.
+          </p>
+        </div>
+      </section>
+
+      <section id="modulos" class="section modules">
+        <p class="eyebrow">Arquitectura funcional</p>
+        <h2>Módulos que convierten una operación en una red inteligente</h2>
+        <p class="section-subtitle">Cada módulo resuelve un problema concreto de operación, seguridad o rentabilidad.</p>
+        <div class="module-grid">
+          <article>
+            <h3>Tracking en Tiempo Real</h3>
+            <p>Ubicación, velocidad y dirección en segundos para actuar sin demora.</p>
+          </article>
+          <article>
+            <h3>Geocercas y Riesgo</h3>
+            <p>Alertas automáticas por entradas, salidas o permanencias sospechosas.</p>
+          </article>
+          <article>
+            <h3>Eco-Drive y Telemetría</h3>
+            <p>Mide hábitos de conducción y reduce desgaste, consumo y accidentes.</p>
+          </article>
+          <article>
+            <h3>Combustible y Mantenimiento</h3>
+            <p>Detecta fugas y anomalías; anticipa mantenimiento antes de fallas graves.</p>
+          </article>
+          <article>
+            <h3>Despacho y Optimización</h3>
+            <p>Optimiza rutas y asignaciones para cumplir más entregas con menos costo.</p>
+          </article>
+          <article>
+            <h3>Reportes Ejecutivos</h3>
+            <p>Indicadores listos para gerencia, operaciones, seguridad y facturación.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="vistas" class="section showcase">
+        <p class="eyebrow">Preview de producto</p>
+        <h2>Así se vería tu plataforma lista para vender</h2>
+        <p class="section-subtitle">Una experiencia visual clara para operadores, supervisores y clientes finales.</p>
+        <div class="stitch-gallery">
+          <article class="stitch-card">
+            <p class="stitch-label">Dashboard 24/7</p>
+            <img
+              src="https://lh3.googleusercontent.com/aida/ADBb0uin7vTw2flHbUx90bnSYOeGT756G0MH4Pgoqtq1U87adM6MwvUZjfZHlDDrhFdMIVZt19S9jmXFJfAB6Hklzaws779ExEtFMLCtJaeX-90rpnAK1mScD2uNwD07FBIVtHWlGGEC3F0GjM2sOK4lI8B1JN_fbgQDcs-Kg3PaXtJ-0jgQxOfP0LisHbLHeTQD4ul0fi3s3cesxnGb19unqRylZUzb9nkrVlA59L3GoBA6EyWQ8fqhgnvqTx4=s0"
+              alt="Diseño real del dashboard de monitoreo 24/7"
+              loading="lazy"
+            />
+          </article>
+          <article class="stitch-card">
+            <p class="stitch-label">Reportes y Analítica</p>
+            <img
+              src="https://lh3.googleusercontent.com/aida/ADBb0ujeb00LeMQPORZAg_LcOX3c-4KFWHJq9QBwkpHRZyq2IpLHio-iZwVoJEnirnNsvdeiB2Y6CNIlWICrHnbrH-r9aEgIhy2G6hxCpthn3LBzenK1XD3pzs46dNItNG1ZHotn-2oeb2lVn76fFUqUES_59H1ddFUZnQep1TYClcEkW_b5xgmDjqEVOFmzOMCv4cSoN0AuEb_KR1aecM9tvHxlslY0zmW0wWjEYEQutLsU-RGeA7yEHSsd9PE=s0"
+              alt="Diseño real de reportes y analítica de flota"
+              loading="lazy"
+            />
+          </article>
+          <article class="stitch-card">
+            <p class="stitch-label">App móvil</p>
+            <img
+              src="https://lh3.googleusercontent.com/aida/ADBb0ujVYLiCfIWaBheECVPtXZImd2_k299bJ9wBNUyaDRBNEy29mWoUxxLsgpZQJaE28bvTwX5jN4YOe_HSS4Rsawm-_D5ClX0Bv8MujpU2585a7kUolnyyD44bO-Qur3t4ETuB-SCg4u0rrRn67yqGk0DKjddmBntoI2_BajRZVmswxc6M_5XxSJV3f0Y3Y9r4wk0bHoNF5jwCWVP4Ygp58i6pFTtRq38EOcYgcpp4-8wGxyM3caZOinwX8A=s0"
+              alt="Diseño real de la aplicación móvil de tracking"
+              loading="lazy"
+            />
+          </article>
+        </div>
+      </section>
+
+      <section id="planes" class="section pricing">
+        <p class="eyebrow">Modelo de negocio para escalar</p>
+        <h2>Vende suscripciones y opera múltiples clientes desde una sola plataforma</h2>
+        <p class="section-subtitle">Elige un plan según tu etapa actual y escala sin migraciones complejas.</p>
+        <div class="pricing-grid">
+          <article>
+            <h3>Starter</h3>
+            <p class="price">$129 <span>/mes</span></p>
+            <ul>
+              <li>Hasta 30 vehículos activos</li>
+              <li>Tracking en vivo y geocercas</li>
+              <li>Reportes operativos esenciales</li>
+              <li>1 subcuenta para cliente</li>
+            </ul>
+            <button class="btn btn-outline">Comenzar</button>
+          </article>
+          <article class="featured">
+            <div class="tag">Más vendido</div>
+            <h3>Pro</h3>
+            <p class="price">$349 <span>/mes</span></p>
+            <ul>
+              <li>Hasta 150 vehículos</li>
+              <li>Eco-drive y control de combustible</li>
+              <li>Bloqueo remoto y anti-sabotaje</li>
+              <li>10 cuentas subcliente</li>
+            </ul>
+            <button class="btn btn-primary">Solicitar implementación</button>
+          </article>
+          <article>
+            <h3>Enterprise</h3>
+            <p class="price">Custom</p>
+            <ul>
+              <li>Capacidad escalable</li>
+              <li>API y marca blanca</li>
+              <li>Cumplimiento y auditoría avanzada</li>
+              <li>Soporte de misión crítica</li>
+            </ul>
+            <button class="btn btn-outline">Hablar con ventas</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section ecuador">
+        <p class="eyebrow">Aterrizado al mercado local</p>
+        <h2>Diseñado para la logística ecuatoriana</h2>
+        <p class="section-subtitle">Pensado para la realidad operativa del país: rutas largas, tráfico variable y seguridad.</p>
+        <div class="ecuador-grid">
+          <article>
+            <h3>Corredores estratégicos</h3>
+            <p>
+              Monitorea corredores Sierra-Costa y rutas urbanas con alertas por desvíos y congestión.
+            </p>
+          </article>
+          <article>
+            <h3>Enfoque en seguridad vial</h3>
+            <p>
+              Reduce siniestros con score de conductor, protocolos SOS y alertas predictivas.
+            </p>
+          </article>
+          <article>
+            <h3>Marco legal y datos</h3>
+            <p>
+              Gestiona datos con trazabilidad y controles compatibles con la LOPDP.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto" class="section cta">
+        <h2>Conviértelo en tu próxima ventaja comercial</h2>
+        <p class="section-subtitle section-subtitle-light">En 30 minutos te mostramos el plan ideal para tu operación.</p>
+        <p>
+          Agenda una demo y recibe una propuesta por etapas: piloto, despliegue y crecimiento multi-cliente.
+        </p>
+        <form class="cta-form">
+          <input type="text" placeholder="Nombre de empresa" />
+          <input type="email" placeholder="Correo corporativo" />
+          <input type="tel" placeholder="Teléfono" />
+          <button class="btn btn-primary" type="button">Quiero mi propuesta</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>GeoPulse Ecuador · Prototipo comercial de sistema de geolocalización y tracking vehicular.</p>
+    </footer>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.2/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="config.js"></script>
+    <script src="config.local.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
